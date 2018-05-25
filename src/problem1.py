@@ -2,9 +2,9 @@
 Final exam, problem 1.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Alex Huber.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # done
 
 import time
 import testing_helper
@@ -19,8 +19,8 @@ def main():
     print()
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
-    # run_test_problem1a()
-    # run_test_problem1b()
+    run_test_problem1a()
+    run_test_problem1b()
 
 
 def run_test_problem1a():
@@ -89,8 +89,13 @@ def problem1a(numbers):
     Type hints:
       :type numbers:  [int]
     """
+
+    mid = len(numbers)//2
+    sum = numbers[0] + numbers[(len(numbers)-1)] + numbers[mid]
+    return sum
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
@@ -165,6 +170,15 @@ def problem1b(numbers):
     Type hints:
       :type numbers:  [int]
     """
+
+    length = len(numbers)
+    mid = length // 3
+    sum = 0
+    for k in range(mid):
+        sum = sum + numbers[mid + k]
+        k = k + 1
+    return sum
+
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
