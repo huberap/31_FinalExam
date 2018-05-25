@@ -36,7 +36,7 @@ def shape(n):
     stars = ' **'
     for k in range(n):
         for j in range(n-(k+1)):
-            print('x', end="")
+            print(' ', end="")
         a = a + str(k+1)
         print(a,stars)
         stars = stars + '*'
