@@ -2,9 +2,9 @@
 Final exam, problem 2.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Alex Huber.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -19,9 +19,9 @@ def main():
     print()
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
-    # run_test_problem2a()
-    # run_test_problem2b()
-    # run_test_problem2c()
+    run_test_problem2a()
+    run_test_problem2b()
+    run_test_problem2c()
 
 
 def is_prime(n):
@@ -169,8 +169,18 @@ def problem2a(x, sequence):
       :type x:    int
       :type sequence:  [int]
     """
+
+    new = []
+    for k in range(len(sequence)):
+        if sequence[k] > x:
+            new.append(sequence[k])
+    return new
+
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
@@ -249,8 +259,16 @@ def problem2b(sequence):
     Type hints:
       :type sequence  [int]
     """
+    index = 0
+    for k in range(len(sequence)):
+        if abs(sequence[k]) > abs(sequence[index]):
+            index = k
+    return index
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
@@ -392,6 +410,14 @@ def problem2c(x):
     Type hints:
       :type x:    int
     """
+    while True:
+        if is_prime(x):
+            if is_prime(sum_of_digits(x)):
+                return x
+                break
+        x = x + 1
+
+
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
