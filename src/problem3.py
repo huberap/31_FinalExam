@@ -2,9 +2,9 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Alex huber.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import time
@@ -67,9 +67,8 @@ def problem3(point, circle1, circle2, window):
       -- Two rg.Circle objects (circle1 and circle2)
       -- An rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
-    Side effects:  Draws all the following on the given rg.RoseWindow:
-      -- Draws the given rg.Point and rg.Circle objects.
-      -- Then draws 3 rg.Lines:
+    Side effects: X Draws all the following on the given rg.RoseWindow:
+      -- X Draws the given rg.Point and rg.Circle objects.
             -- one from the given rg.Point to the center of circle1
             -- one from the center of circle1 to the center of circle2
             -- one from the center of circle2 to the given rg.Point
@@ -92,8 +91,42 @@ def problem3(point, circle1, circle2, window):
        :type circle2:  rg.Circle
       :type window:    rg.RoseWindow
     """
+    point.attach_to(window)
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+    line1 = rg.Line(point,circle1.center)
+    line2 = rg.Line(point,circle2.center)
+    line3 = rg.Line(circle1.center, circle2.center)
+
+    line1.color = circle1.fill_color
+    line2.color = circle1.fill_color
+    line3.color = circle1.fill_color
+
+    line1.attach_to(window)
+    line2.attach_to(window)
+    line3.attach_to(window)
+
+    mid1 = line1.get_midpoint()
+    mid2 = line2.get_midpoint()
+    mid3 = line3.get_midpoint()
+
+    line4 = rg.Line(mid2,mid1)
+    line5 = rg.Line(mid2,mid3)
+    line6 = rg.Line(mid1,mid3)
+
+    line4.color = circle2.fill_color
+    line5.color = circle2.fill_color
+    line6.color = circle2.fill_color
+    line4.attach_to(window)
+    line5.attach_to(window)
+    line6.attach_to(window)
+
+    window.render()
+
+
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
 
