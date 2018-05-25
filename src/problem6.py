@@ -2,8 +2,8 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and alex huber.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -32,6 +32,17 @@ def run_test_shape():
 
 
 def shape(n):
+    a = ''
+    stars = ' **'
+    for k in range(n):
+        for j in range(n-(k+1)):
+            print('x', end="")
+        a = a + str(k+1)
+        print(a,stars)
+        stars = stars + '*'
+
+
+
     ####################################################################
     # IMPORTANT: In solving this problem,
     #   You must NOT use string multiplication.
